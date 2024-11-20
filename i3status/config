@@ -1,0 +1,39 @@
+general {
+	output_format = "i3bar"
+	colors = false
+	markup = pango
+	interval = 5
+}
+
+order += "load"
+order += "cpu_temperature 0"
+order += "wireless _first_"
+order += "volume master"
+order += "battery 0"
+order += "time"
+
+load {
+	format = " %5min Load "
+}
+
+cpu_temperature 0 {
+	format = " %degrees °C "
+	path = "/sys/class/thermal/thermal_zone0/temp"
+}
+
+wireless _first_ {
+	format_up = " %essid "
+	format_down = " Disconnected "
+}
+
+volume master {
+	format = " %volume "
+	format_muted = " Muted "
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+}
+
+time {
+	format = " %b %d at %H:%M "
+}
