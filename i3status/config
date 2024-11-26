@@ -1,6 +1,6 @@
 general {
 	output_format = "i3bar"
-	colors = false
+	colors = true
 	markup = pango
 	interval = 5
 }
@@ -22,7 +22,7 @@ cpu_temperature 0 {
 }
 
 wireless _first_ {
-	format_up = " %essid "
+	format_up = "<span foreground='#9ECE6A'>%essid</span>"
 	format_down = " Disconnected "
 }
 
